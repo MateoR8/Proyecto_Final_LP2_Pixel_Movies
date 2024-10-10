@@ -34,4 +34,7 @@ public class Reservas {
     @JoinColumn(name = "ID_SALA")
     private Salas sala;
 
+    @OneToOne
+    @JoinColumn(name="ID_PELICULAS")
+    private Peliculas pelicula;
 }
