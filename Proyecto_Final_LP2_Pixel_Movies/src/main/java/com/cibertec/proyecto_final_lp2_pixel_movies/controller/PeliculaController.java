@@ -16,7 +16,7 @@ public class PeliculaController {
 
     @GetMapping("/listarPeliculas")
     public String listarPeliculas(Model model) {
-        model.addAttribute("listaEmpleados", peliculaService.listarPeliculas());
+        model.addAttribute("listaPeliculas", peliculaService.listarPeliculas());
         return "peliculas/peliculas";
     }
 
