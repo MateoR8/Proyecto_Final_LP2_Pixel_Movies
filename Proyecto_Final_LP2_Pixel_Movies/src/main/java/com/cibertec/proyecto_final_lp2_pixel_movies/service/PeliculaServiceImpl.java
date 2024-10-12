@@ -30,12 +30,12 @@ public class PeliculaServiceImpl implements PeliculaService {
         if(peliculaRepository.existsById(id)) {
             peliculaRepository.deleteById(id);
         } else {
-            throw new RuntimeException("No se encontro la pelicula con el id: " + id);
+            throw new RuntimeException("No se encontró la película con el id: " + id);
         }
     }
 
     @Override
     public Peliculas buscarPelicula(Integer id) {
-        return peliculaRepository.findById(id).orElseThrow(() -> new RuntimeException("No se encontro la pelicula con el id: " + id));
+        return peliculaRepository.findById(id).orElseThrow(() -> new RuntimeException("No se encontró la película con el id: " + id));
     }
 }
