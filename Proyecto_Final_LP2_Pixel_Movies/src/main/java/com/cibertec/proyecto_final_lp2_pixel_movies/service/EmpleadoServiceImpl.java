@@ -14,9 +14,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
     private final EmpleadoRepository empleadoRepository;
 
     @Override
-    public List<Empleados> listarEmpleados() {
-        return empleadoRepository.findAll();
-    }
+    public List<Empleados> listarEmpleados() {return empleadoRepository.findAll();}
 
     @Override
     public void guardarEmpleado(Empleados empleado) {
@@ -28,12 +26,12 @@ public class EmpleadoServiceImpl implements EmpleadoService {
         if (empleadoRepository.existsById(id)) {
             empleadoRepository.deleteById(id);
         } else {
-            throw new RuntimeException("No se encontró empleado con el id: " + id);
+            throw new RuntimeException("No se encontrï¿½ empleado con el id: " + id);
         }
     }
 
     @Override
     public Empleados buscarEmpleado(Integer id) {
-        return empleadoRepository.findById(id).orElseThrow(() -> new RuntimeException("No se encontró empleado con el id: " + id));
+        return empleadoRepository.findById(id).orElseThrow(() -> new RuntimeException("No se encontrï¿½ empleado con el id: " + id));
     }
 }
