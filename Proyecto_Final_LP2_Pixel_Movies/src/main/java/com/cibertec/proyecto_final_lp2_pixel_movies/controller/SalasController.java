@@ -28,10 +28,10 @@ public class SalasController {
     @PostMapping("/guardarSala")
     public String guardarSala(@ModelAttribute("sala") Salas sala) {
         salasService.guardarSalas(sala);
-        return "redirect:salas/listarSalas";
+        return "redirect:/salas/listarSalas";
     }
 
-    @GetMapping("/actualizarSala")
+    @GetMapping("/actualizarSala/{id}")
     public String actualizarSala(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("sala", salasService.obtenerSalas(id));
         return "salas/actualizarSala";
@@ -40,7 +40,7 @@ public class SalasController {
     @GetMapping("/eliminarSala/{id}")
     public String eliminarSala(@PathVariable("id") Integer id) {
         salasService.eliminarSalas(id);
-        return "redirect:salas/listarSalas";
+        return "redirect:/salas/listarSalas";
     }
 
 }

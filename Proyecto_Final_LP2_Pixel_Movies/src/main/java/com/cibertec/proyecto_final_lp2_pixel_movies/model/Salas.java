@@ -17,6 +17,7 @@ public class Salas {
     @Column(name = "ID_SALA")
     private Integer idSala;
 
+    
     @Column(name = "COD_SALA", length = 7, nullable = false)
     private String codSala;
 
