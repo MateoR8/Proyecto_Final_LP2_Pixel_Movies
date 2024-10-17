@@ -1,10 +1,75 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Pagina Principal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="/css/principal.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+
+<nav>
+    <a th:href="@{/paginaPrincipal}">
+        <img class="imgLogo" src="/images/logoFinal.png" alt="Página Principal">
+    </a>
+    <input class="form-control" type="text" placeholder="¿Qué estás buscando?" disabled>
+</nav>
+
+<div class="nav-list">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/peliculas/listarPeliculas}">Películas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/productos/listarProductos}">Productos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Clientes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Empleados</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/salas/listarSalas}">Salas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Reservas</a>
+        </li>
+    </ul>
+</div>
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a th:href="@{/peliculas/listarPeliculas}">
+            <img src="/images/smile2.jpg" class="d-block w-100" alt="Smile">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/venom.jpg" class="d-block w-100" alt="Venom">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/robotsalvaje.jpg" class="d-block w-100" alt="Robot Salvaje">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/joker2.jpg" class="d-block w-100" alt="Joker">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybGxe92N0cB+I82w0kq5DFr50jTEOwXH59FWn3tSBKTXmFbH" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-hQp01MOJkQW4/oGv9Mm+If7YQ2k+KMT3MGe6uTg3qD20ms4/qKxH0M7D1gAtKb7g" crossorigin="anonymous"></script>
+<script src="/js/slider.js" defer></script>
 
 </body>
 </html>
