@@ -58,6 +58,24 @@ nav .form-control {
 
 /*-----------------------------------------------------------------------*/
 
+.agregar-producto{
+    background-color: rgb(33, 150, 243);
+    background-image: linear-gradient(45deg, rgb(33, 150, 243), rgb(0, 122, 204));
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/*-----------------------------------------------------------------------*/
+
 .componenteImg {
     width: 60%;
 }
@@ -70,4 +88,3 @@ nav .form-control {
 .titulo {
     font-size: 35pt;
 }
-
