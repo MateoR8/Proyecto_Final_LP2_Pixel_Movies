@@ -11,38 +11,11 @@
 </head>
 <body>
 
-<nav>
-    <a th:href="@{/paginaPrincipal}">
-        <img class="imgLogo" src="/images/logoFinal.png" alt="Página Principal">
-    </a>
-    <input class="form-control" type="text" placeholder="¿Qué estás buscando?" disabled>
-</nav>
+<div th:replace="comun/nav.html"></div>
 
+<br>
 
-<div class="nav-list">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/peliculas/listarPeliculas}">Películas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/productos/listarProductos}">Productos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Clientes</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Empleados</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="#">Salas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Reservas</a>
-        </li>
-    </ul>
-</div>
-
-<a th:href="@{/salas/nuevaSala}" class="btn btn-agregar btn-sm mb-3">Agregar Sala</a>
+<a th:href="@{/salas/nuevaSala}" class="btn-agregar">Agregar Sala</a>
 
 <div class="col-md-9 mx-auto text-center">
     <h3 class="text-center titulo">Salas</h3>
@@ -50,12 +23,16 @@
         <div class="row justify-content-center">
             <div class="col-md-4" th:each="sala : ${listaSalas}">
                 <div class="card mb-4 shadow-sm">
-                    <img class="componenteImg" src="/images/sala.jpg" alt="Imagen Sala">
-                    <div class="card-body">
-                        <h5 class="card-title" th:text="${sala.codSala}"> </h5>
-                        <p class="card-text" th:text="'Capacidad: ' + ${sala.capacidadSala}"> </p>
-                        <a th:href="@{/salas/actualizarSala/{id}(id=${sala.idSala})}" class="btn btn-info">Actualizar Sala</a>
-                        <a href="#" class="btn btn-danger" th:attr="data-id=${sala.idSala}" onclick="confirmDelete(event)">Eliminar Sala</a>
+                    <div class="card">
+                        <br>
+                        <img class="componenteImg" src="/images/sala.jpg" alt="Imagen Sala">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${sala.codSala}"> </h5>
+                            <p class="card-text" th:text="'Capacidad: ' + ${sala.capacidadSala}"> </p>
+
+                            <a th:href="@{/salas/actualizarSala/{id}(id=${sala.idSala})}" class="btn btn-info">Actualizar Sala</a>
+                            <a class="btn btn-danger" th:attr="data-id=${sala.idSala}" onclick="confirmDelete(event)">Eliminar Sala</a>
+                        </div>
                     </div>
                 </div>
             </div>

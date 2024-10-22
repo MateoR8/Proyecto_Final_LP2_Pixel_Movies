@@ -12,35 +12,8 @@
 </head>
 <body>
 
-<nav>
-    <a th:href="@{/paginaPrincipal}">
-        <img class="imgLogo" src="/images/logoFinal.png" alt="Página Principal">
-    </a>
-    <input class="form-control" type="text" placeholder="¿Qué estás buscando?" disabled>
-</nav>
+<div th:replace="comun/nav.html"></div>
 
-<div class="nav-list">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/peliculas/listarPeliculas}">Películas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/productos/listarProductos}">Productos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Clientes</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Empleados</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="#">Salas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Reservas</a>
-        </li>
-    </ul>
-</div>
 
 <div class="container mt-5">
     <h1 class="text-center">Administración de Salas</h1>

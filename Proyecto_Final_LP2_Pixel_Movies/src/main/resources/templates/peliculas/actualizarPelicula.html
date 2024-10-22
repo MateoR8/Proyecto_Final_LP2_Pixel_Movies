@@ -19,7 +19,7 @@
     <h2 class="text-center">Actualizar Pelicula</h2>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form th:action="@{/peliculas/actualizarPelicula}" th:object="${pelicula}" method="post">
+            <form th:action="@{/peliculas/guardarPelicula}" th:object="${pelicula}" method="post">
                 <input type="hidden" th:field="*{idPelicula}">
                 <div class="form-floating mb-3">
                     <input type="text" th:field="*{nombrePelicula}" class="form-control" id="nombrePelicula" placeholder="Nombre de la Pelicula" required>

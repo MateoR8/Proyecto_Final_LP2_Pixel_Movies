@@ -10,36 +10,11 @@
 </head>
 <body>
 
-<nav>
-    <a th:href="@{/paginaPrincipal}">
-        <img class="imgLogo" src="/images/logoFinal.png" alt="Pagina Principal">
-    </a>
-    <input class="form-control" type="text" placeholder="¿Que estas buscando?" disabled>
-</nav>
+<div th:replace="comun/nav.html"></div>
 
 <!----------------------------------------------------------------------->
 
-<div class="nav-list">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link" type="submit" >Peliculas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" type="submit" >Productos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" type="submit" >Clientes</a></li>
-        <li class="nav-item">
-            <a class="nav-link" type="submit" >Empleados</a></li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/salas/listarSalas}">Salas</a>
-        </li>
-    </ul>
-</div>
-
-<!----------------------------------------------------------------------->
-
-<a th:href="@{/productos/nuevoProducto}" type="button" class="btn btn-primary agregar-producto">Agregar Producto</a>
+<a th:href="@{/productos/nuevoProducto}" type="button" class="agregar-producto">Agregar Producto</a>
 
 <!----------------------------------------------------------------------->
 <div class="col-md-9 mx-auto text-center">
@@ -48,7 +23,7 @@
         <div class="row justify-content-center">
             <div class="col-md-4" th:each="producto: ${listarProductos}">
                 <div class="card mb-4 shadow-sm">
-                    <div class="card">
+                    <div>
                         <img class="componenteImg" src="/images/producto.png" alt="">
                         <div class="card-body">
                             <h5 class="card-title" th:text="${producto.getNombreProducto()}"> </h5>
@@ -56,7 +31,7 @@
                             <p class="card-text" th:text="'Marca: ' + ${producto.getMarcaProducto()}"> Marca: </p>
 
                             <a th:href="@{/productos/actualizarProducto/{id}(id=${producto.idProducto})}" class="btn btn-info">Actualizar Producto</a>
-                            <a href="#" class="btn btn-danger" th:attr="data-id=${producto.idProducto}" onclick="confirmDelete(event)">Eliminar Producto</a>
+                            <a class="btn btn-danger" th:attr="data-id=${producto.idProducto}" onclick="confirmDelete(event)">Eliminar Producto</a>
                         </div>
                     </div>
                 </div>

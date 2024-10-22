@@ -89,3 +89,20 @@ nav .form-control {
         font-size: 30pt;
     }
 }
+
+.btn-agregar {
+    background-color: #2453ed;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 18px;
+}
+
+.btn-agregar:hover {
+    background-color: #061059;
+}

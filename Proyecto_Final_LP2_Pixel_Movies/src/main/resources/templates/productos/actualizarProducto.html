@@ -11,32 +11,7 @@
 </head>
 <body>
 
-<nav>
-    <a th:href="@{/paginaPrincipal}">
-        <img class="imgLogo" src="/images/logoFinal.png" alt="Pagina Principal">
-    </a>
-    <input class="form-control" type="text" placeholder="¿Que estas buscando?" disabled>
-</nav>
-
-<!----------------------------------------------------------------------->
-
-<div class="nav-list">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link" type="submit" >Peliculas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/productos/listarProductos}" >Productos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" type="submit" >Clientes</a></li>
-        <li class="nav-item">
-            <a class="nav-link" type="submit" >Empleados</a></li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/salas/listarSalas}">Salas</a>
-        </li>
-    </ul>
-</div>
+<div th:replace="comun/nav.html"></div>
 
 <!----------------------------------------------------------------------->
 <div class="container mt-5">
