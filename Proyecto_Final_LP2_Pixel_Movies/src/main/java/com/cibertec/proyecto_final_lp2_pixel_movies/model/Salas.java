@@ -23,4 +23,6 @@ public class Salas {
 
     @Column(name = "CAPACIDAD_SALA", nullable = false)
     private Integer CapacidadSala;
+
+
 }

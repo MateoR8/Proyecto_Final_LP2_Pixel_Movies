@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Time;
+import java.util.Set;
 
 @Entity
 @Table(name = "PELICULAS")
@@ -36,5 +37,6 @@ public class Peliculas {
 
     @Column(name = "CLASIFICACION_PELI", length = 50, nullable = false)
     private String ClasificacionPelicula;
+
 
 }

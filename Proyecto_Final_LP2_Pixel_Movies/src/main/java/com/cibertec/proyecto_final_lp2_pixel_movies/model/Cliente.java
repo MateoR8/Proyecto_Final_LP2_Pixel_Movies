@@ -8,6 +8,7 @@ import org.hibernate.annotations.CollectionIdMutability;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "CLIENTES")
@@ -43,7 +44,5 @@ public class Cliente {
 
     @Column(name = "CORREO_CLIENTE", length = 100, nullable = false)
     private String correo;
-
-
 
 }
