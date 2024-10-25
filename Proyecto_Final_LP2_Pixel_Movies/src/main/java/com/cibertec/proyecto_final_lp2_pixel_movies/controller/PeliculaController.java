@@ -7,9 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/peliculas")
 @AllArgsConstructor
+@SessionAttributes("admin")
 public class PeliculaController {
 
     private final PeliculaService peliculaService;
@@ -44,7 +47,18 @@ public class PeliculaController {
         return "redirect:/peliculas/listarPeliculas";
     }
 
+    @GetMapping("/filtro")
+    public String filtro(Model model) {
+        return "peliculas/filtroPeliculas";
+    }
 
+    @GetMapping("/listarPeliculasporIdioma")
+    public String listarPeliculasporIdioma(@RequestParam("idiomaPelicula") String idiomaPelicula, Model model) {
+        List<Peliculas> lista = peliculaService.listarPeliculasPorIdioma(idiomaPelicula);
+        model.addAttribute("filtroPeliculas", lista);
+        model.addAttribute("idiomaPelicula", idiomaPelicula);
+        return "peliculas/filtroPeliculas";
+    }
 
 
 }

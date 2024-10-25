@@ -11,10 +11,14 @@
 <body>
 
 <div th:replace="comun/nav.html"></div>
-
+<h3 style="text-align: center"> Esta logeado como:
+    <span th:text="${admin.getNombreUsuarioReal()}"></span>
+</h3>
 <!----------------------------------------------------------------------->
 
 <a th:href="@{/productos/nuevoProducto}" type="button" class="agregar-producto">Agregar Producto</a>
+
+
 
 <!----------------------------------------------------------------------->
 <div class="col-md-9 mx-auto text-center">

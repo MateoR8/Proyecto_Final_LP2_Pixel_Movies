@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/salas")
 @AllArgsConstructor
+@SessionAttributes("admin")
 public class SalasController {
     private final SalasService salasService;
 

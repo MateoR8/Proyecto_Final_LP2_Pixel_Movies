@@ -36,4 +36,9 @@ public class ReservaServiceImpl implements ReservaService {
     public Reservas buscarReserva(Integer id) {
         return reservaRepository.findById(id).orElseThrow(() -> new RuntimeException("No se encontró la reserva con el id: " + id));
     }
+
+    @Override
+    public List<Reservas> buscarReservasPorMovie(Integer idPelicula) {
+        return reservaRepository.findReservasByIdPeliculas(idPelicula);
+    }
 }

@@ -106,3 +106,20 @@ nav .form-control {
 .btn-agregar:hover {
     background-color: #061059;
 }
+
+.btn-generar {
+    background-color: #7b777c;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 18px;
+}
+
+.btn-generar:hover {
+    background-color: #626263;
+}

@@ -10,4 +10,6 @@ public interface PeliculaService {
     void guardarPelicula(Peliculas pelicula);
     void borrarPelicula(Integer id);
     Peliculas buscarPelicula(Integer id);
+
+    List<Peliculas> listarPeliculasPorIdioma(String idiomaPelicula);
 }

@@ -13,11 +13,16 @@
 
 <div th:replace="comun/nav.html"></div>
 
+<h3 style="text-align: center"> Esta logeado como:
+    <span th:text="${admin.getNombreUsuarioReal()}"></span>
+</h3>
+
 <!-----------------------------Clientes------------------------------------------>
 
 <br>
 
 <a th:href="@{/Clientes/nuevoCliente}" class="btn-agregar">Agregar Sala</a>
+<a th:href="@{/Clientes/reporteClientes}"   class="btn-generar" target="_blank"> Generar reporte PDF </a>
 
 <br>
 

@@ -104,3 +104,35 @@ nav .nav-item {
     background-color: #061059;
 }
 
+.btn-filtrar {
+    background-color: #58f846;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 18px;
+}
+
+.btn-filtrar:hover {
+    background-color: #386533;
+}
+
+.btn-buscar {
+    background-color: #58f846;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 18px;
+}
+
+.btn-buscar:hover {
+    background-color: #386533;
+}

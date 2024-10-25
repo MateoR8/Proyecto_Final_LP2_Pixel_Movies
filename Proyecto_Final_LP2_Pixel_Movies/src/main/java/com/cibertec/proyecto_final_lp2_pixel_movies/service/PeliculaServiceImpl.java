@@ -38,4 +38,9 @@ public class PeliculaServiceImpl implements PeliculaService {
     public Peliculas buscarPelicula(Integer id) {
         return peliculaRepository.findById(id).orElseThrow(() -> new RuntimeException("No se encontró la película con el id: " + id));
     }
+
+    @Override
+    public List<Peliculas> listarPeliculasPorIdioma(String idiomaPelicula) {
+        return peliculaRepository.findPeliculasByIdiomaPelicula(idiomaPelicula);
+    }
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/productos")
 @RequiredArgsConstructor
+@SessionAttributes("admin")
 
 public class ProductoController {
 

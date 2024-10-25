@@ -14,6 +14,10 @@
 
 <div th:replace="comun/nav.html"></div>
 
+<h3 style="text-align: center"> Esta logeado como:
+    <span th:text="${admin.getNombreUsuarioReal()}"></span>
+</h3>
+
 <!----------------------------------------------------------------------->
 <div class="container mt-5">
     <h1 class="text-center">Administración de Reservas</h1>

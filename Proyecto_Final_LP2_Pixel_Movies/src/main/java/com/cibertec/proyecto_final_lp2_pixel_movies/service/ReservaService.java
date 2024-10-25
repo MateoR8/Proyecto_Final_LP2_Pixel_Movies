@@ -9,4 +9,6 @@ public interface ReservaService {
     void guardarReserva(Reservas reserva);
     void borrarReserva(Integer id);
     Reservas buscarReserva(Integer id);
+
+    List<Reservas> buscarReservasPorMovie(Integer idPelicula);
 }

@@ -1,6 +1,7 @@
 
 package com.cibertec.proyecto_final_lp2_pixel_movies.controller;
 
+import com.cibertec.proyecto_final_lp2_pixel_movies.model.Peliculas;
 import com.cibertec.proyecto_final_lp2_pixel_movies.model.Reservas;
 import com.cibertec.proyecto_final_lp2_pixel_movies.service.ClienteService;
 import com.cibertec.proyecto_final_lp2_pixel_movies.service.PeliculaService;
@@ -22,12 +23,14 @@ import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
 @Controller
 @RequestMapping("/reservas")
 @RequiredArgsConstructor
+@SessionAttributes("admin")
 public class ReservaController {
 
     private final ReservaService reservaService;
@@ -98,5 +101,21 @@ public class ReservaController {
 
         // Cerrar la conexión
         conn.close();
+    }
+
+    @GetMapping("/inicioFiltro")
+    public String inicioFiltro(Model model) {
+        model.addAttribute("listarPeliculas", peliculaService.listarPeliculas());
+        model.addAttribute("peliculas", new Peliculas()); // Agrega esta línea
+        return "reservas/filtroReserva";
+    }
+
+    @GetMapping("/listarReservasporPeliculas")
+    public String listarReservasporPeliculas(@RequestParam("idPelicula") Integer idPelicula, Model model) {
+        List<Reservas> lista = reservaService.buscarReservasPorMovie(idPelicula);
+        model.addAttribute("listaReservas", lista);
+        model.addAttribute("listarPeliculas", peliculaService.listarPeliculas());
+        model.addAttribute("idPelicula", idPelicula);
+        return "reservas/filtroReserva";
     }
 }
