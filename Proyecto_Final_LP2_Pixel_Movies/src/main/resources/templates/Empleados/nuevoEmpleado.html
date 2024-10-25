@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Agregar Empleado</title>
+  <link rel="stylesheet" href="/css/empleado.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+<div th:replace="comun/nav.html"></div>
+
+<!----------------------------------------------------------------------->
+
+<div class="container mt-5">
+  <h1 class="text-center">Administración de Empleados</h1>
+  <hr>
+  <h2 class="text-center">Nuevo Empleado</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form th:action="@{/Empleados/guardarEmpleado}" th:object="${empleado}" method="post">
+        <div class="form-floating mb-3">
+          <input type="text" th:field="*{nombreEmpleado}" class="form-control" id="nombresEmpleado" placeholder="Nombre del Empleado" required>
+          <label for="nombresEmpleado"><i class="bi bi-tv-fill"></i>Nombre del Empleado</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" th:field="*{apellidoPaternoEmpleado}" class="form-control" id="apellidoPaternoEmpleado" placeholder="Apellido Paterno del Empleado" required>
+          <label for="apellidoPaternoEmpleado"><i class="fas fa-users"></i>Apellido Paterno del Empleado</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" th:field="*{apellidoMaternoEmpleado}" class="form-control" id="apellidoMaternoEmpleado" placeholder="Apellido Materno del Empleado" required>
+          <label for="apellidoMaternoEmpleado"><i class="bi bi-tv-fill"></i>Apellido Materno del Empleado</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" th:field="*{numeroCelularEmpleado}" class="form-control" id="numeroCelularEmpleado" placeholder="Numero Celular del Empleado" required>
+          <label for="numeroCelularEmpleado"><i class="bi bi-tv-fill"></i>Numero Celular del Empleado</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="date" th:field="*{fechaNacimientoEmpleado}" class="form-control" id="fechaNacimientoEmpleado" placeholder="Fecha de Nacimiento del Empleado" required>
+          <label for="fechaNacimientoEmpleado"><i class="bi bi-tv-fill"></i>Fecha de Nacimiento del Empleado</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" th:field="*{correoEmpleado}" class="form-control" id="correoEmpleado" placeholder="Correo del Empleado" required>
+          <label for="correoEmpleado"><i class="bi bi-tv-fill"></i>Correo del Empleado</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" th:field="*{dniEmpleado}" class="form-control" id="dniEmpleado" placeholder="Dni del Empleado" required>
+          <label for="dniEmpleado"><i class="bi bi-tv-fill"></i>Dni del Empleado</label>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-success w-100"><i class="fas fa-save"></i> Guardar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

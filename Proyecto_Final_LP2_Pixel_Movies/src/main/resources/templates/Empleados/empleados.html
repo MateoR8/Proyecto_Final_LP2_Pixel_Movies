@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empleados</title>
+  <link rel="stylesheet" href="/css/empleado.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+
+<div th:replace="comun/nav.html"></div>
+
+<!-----------------------------Empleados------------------------------------------>
+
+<br>
+
+<a th:href="@{/Empleados/nuevoEmpleado}" class="btn-agregar">Agregar Empleado</a>
+
+<br>
+
+
+<div class="container">
+  <h3 class="text-center titulo">Empleados</h3>
+  <br>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Nombres del Empleado</th>
+      <th>Apellidos</th>
+      <th>Numero de Celular</th>
+      <th>Dni Empleado</th>
+      <th>Fecha de Nacimiento</th>
+      <th>Correo</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  th:each="empleado: ${listaEmpleados}">
+      <td th:text="${empleado.nombreEmpleado}"></td>
+      <td th:text="${empleado.apellidoPaternoEmpleado + ' ' + empleado.apellidoMaternoEmpleado}"></td>
+      <td th:text="${empleado.numeroCelularEmpleado}"></td>
+      <td th:text="${empleado.dniEmpleado}"></td>
+      <td th:text="${empleado.fechaNacimientoEmpleado}"></td>
+      <td th:text="${empleado.correoEmpleado}"></td>
+      <td>
+        <a th:href="@{/Empleados/actualizarEmpleado/{id}(id=${empleado.idEmpleado})}" class="btn btn-info">Actualizar</a>
+        <a th:attr="data-id=${empleado.idEmpleado}" class="btn btn-danger" onclick="confirmDelete(event)">Eliminar</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  function confirmDelete(event) {
+    event.preventDefault();
+    const id = event.target.getAttribute("data-id");
+    const url = `/Empleados/eliminarEmpleado/${id}`;
+
+    Swal.fire({
+      title: '¿Estás seguro de eliminar este Empleado?',
+      text: "¡No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = url;
+      }
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+
 package com.cibertec.proyecto_final_lp2_pixel_movies.model;
 
 
@@ -8,6 +9,7 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "RESERVAS")
@@ -26,15 +28,15 @@ public class Reservas {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaReserva;
 
-    @OneToOne
-    @JoinColumn(name = "ID_CLIENTE")
-    private Cliente cliente;
-
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "ID_SALA")
-    private Salas sala;
+    private Salas salas;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="ID_PELICULAS")
-    private Peliculas pelicula;
+    private Peliculas peliculas;
+
+    @ManyToOne
+    @JoinColumn(name="ID_CLIENTE")
+    private Cliente clientes;
 }
